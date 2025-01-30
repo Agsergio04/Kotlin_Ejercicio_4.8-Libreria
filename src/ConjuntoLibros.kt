@@ -18,7 +18,7 @@ class ConjuntoLibros(var loteLibros: Array<Libro?> = arrayOfNulls<Libro>(5)) {
         var condicion = true
 
         for (libro in loteLibros ){
-            if ((libro?.autor == libroQuitar.autor || libro?.titulo == libroQuitar.titulo )&& condicion){
+            if ((libro?.autor == libroQuitar.autor && libro?.titulo == libroQuitar.titulo )&& condicion){
                 loteLibros[contador] = null
                 condicion = false
             }
