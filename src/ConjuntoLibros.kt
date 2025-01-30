@@ -34,15 +34,19 @@ class ConjuntoLibros(var loteLibros: Array<Libro?> = arrayOfNulls<Libro>(5)) {
         var libroMenorPuntuacion: Libro? = null
 
         for(libro in loteLibros){
-            if (libro?.calificacion!! > mayorPuntacion){
-                mayorPuntacion = libro.calificacion
-                libroMayorPuntuacion = loteLibros[contador]
-            }
-            if (libro?.calificacion!! < menorPuntuacion){
-                mayorPuntacion = libro.calificacion
-                libroMenorPuntuacion = loteLibros[contador]
+            if( libro != null){
+                if (libro.calificacion > mayorPuntacion){
+                    mayorPuntacion = libro.calificacion
+                    libroMayorPuntuacion = loteLibros[contador]
+                }
+                if (libro.calificacion < menorPuntuacion){
+                    mayorPuntacion = libro.calificacion
+                    libroMenorPuntuacion = loteLibros[contador]
+                }
+
             }
             contador++
+
         }
 
         println("El libro con mayor puntuacion es $libroMayorPuntuacion")
